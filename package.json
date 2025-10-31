@@ -58,6 +58,7 @@
     "why do we need to build before running tests / dev?": "We need the binary to be built so we run daemon commands which directly run the binary - we don't want them to go out of sync or have custom spawn logic depending how we started happy",
     "typecheck": "tsc --noEmit",
     "build": "shx rm -rf dist && npx tsc --noEmit && pkgroll",
+    "build-no-typecheck": "shx rm -rf dist && pkgroll",
     "test": "yarn build && tsx --env-file .env.integration-test node_modules/.bin/vitest run",
     "start": "yarn build && ./bin/happy.mjs",
     "dev": "tsx src/index.ts",
